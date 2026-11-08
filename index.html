@@ -314,6 +314,19 @@
   .about-social{justify-content:flex-start;margin-top:0}
   @media (max-width:860px){ .about{grid-template-columns:1fr;gap:40px} .about-photo{max-width:420px;width:100%;margin:0 auto} }
 
+  /* floating WhatsApp button — sits above Netlify's free-plan badge (bottom-right) */
+  .wa-float{position:fixed;right:20px;bottom:76px;z-index:90;display:flex;align-items:center;gap:0;height:58px;padding:0 15px;border-radius:999px;
+    background:#25d366;color:#fff;font-weight:600;font-size:15px;box-shadow:0 10px 30px -6px rgba(37,211,102,.6),0 0 0 1px rgba(255,255,255,.15) inset;
+    transition:transform .25s,box-shadow .25s,gap .3s}
+  .wa-float::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #25d366;animation:wa-ring 2.4s ease-out infinite;pointer-events:none}
+  @keyframes wa-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+  .wa-float:hover{transform:translateY(-2px);box-shadow:0 14px 40px -6px rgba(37,211,102,.75);gap:10px}
+  .wa-icon{display:grid;place-items:center;width:28px;height:28px}
+  .wa-icon svg{width:28px;height:28px}
+  .wa-label{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s}
+  .wa-float:hover .wa-label,.wa-float:focus-visible .wa-label{max-width:140px}
+  @media (max-width:560px){ .wa-float{right:16px;bottom:70px;height:54px;padding:0 13px} }
+
   footer{padding:50px 0 40px;color:var(--dim);font-size:14px}
   footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px}
 
@@ -617,6 +630,12 @@
 </div>
 <div class="toast" id="toast"></div>
 
+<!-- Floating WhatsApp chat button (shows only when a WhatsApp number is set) -->
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" hidden>
+  <span class="wa-icon"></span>
+  <span class="wa-label">Chat with me</span>
+</a>
+
 <script>
 fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFIG => {
   const $ = (s, el = document) => el.querySelector(s);
@@ -807,10 +826,23 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
     tiktok:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.3v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.3 6.3 0 1 0 5.3 6.2V8.6a8 8 0 0 0 4.4 1.4V6.7a4.6 4.6 0 0 1-4.4-4.7z"/></svg>',
     whatsapp:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>'
   };
+  // WhatsApp accepts a number with country code ("212600000000") or a full wa.me link
+  const waText = encodeURIComponent(`Hi ${CONFIG.person || ''}, I'd like to book an edit 🎬`);
+  const waRaw = (CONFIG.socials.whatsapp || '').trim();
+  const waLink = !waRaw ? '' : /^https?:/i.test(waRaw)
+    ? waRaw + (waRaw.includes('?') ? '' : `?text=${waText}`)
+    : `https://wa.me/${waRaw.replace(/\D/g, '')}?text=${waText}`;
+  const linkFor = (k, u) => k === 'whatsapp' ? waLink : u;
   const socialHtml = Object.entries(CONFIG.socials).filter(([,u])=>u)
-    .map(([k,u]) => `<a class="social" href="${esc(u)}" target="_blank" rel="noopener" aria-label="${k}">${icons[k]||''}</a>`).join('');
+    .map(([k,u]) => `<a class="social" href="${esc(linkFor(k,u))}" target="_blank" rel="noopener" aria-label="${k}">${icons[k]||''}</a>`).join('');
   $('#socials').innerHTML = socialHtml;
   if ($('#aboutSocials')) $('#aboutSocials').innerHTML = socialHtml;
+  if (waLink) {
+    const wa = $('#waFloat');
+    wa.href = waLink;
+    wa.querySelector('.wa-icon').innerHTML = icons.whatsapp;
+    wa.hidden = false;
+  }
 
   /* ---- modal player ---- */
   const modal = $('#modal'), box = $('#modalBox');

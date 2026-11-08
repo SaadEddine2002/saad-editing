@@ -38,7 +38,7 @@ collections:
               - { label: "TikTok", name: tiktok, widget: string, required: false }
               - { label: "YouTube", name: youtube, widget: string, required: false }
               - { label: "LinkedIn", name: linkedin, widget: string, required: false }
-              - { label: "WhatsApp (e.g. https://wa.me/212600000000)", name: whatsapp, widget: string, required: false }
+              - { label: "WhatsApp number with country code, no + or spaces (e.g. 212600000000) — shows the green chat button", name: whatsapp, widget: string, required: false }
 
           - label: "Numbers under the showreel"
             name: stats
