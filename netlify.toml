@@ -1,4 +1,5 @@
 # Plain HTML site — nothing to build, publish the folder as it is.
+# The command must not be empty, or Netlify uses the build command from its dashboard.
 [build]
   publish = "."
-  command = ""
+  command = "echo 'Static site - no build needed'"
