@@ -1,0 +1,90 @@
+# Admin panel for Saad Editing (Decap CMS)
+# Only people with access to the GitHub repository can log in.
+backend:
+  name: github
+  repo: SaadEddine2002/saad-editing
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+collections:
+  - name: site
+    label: "Website"
+    editor:
+      preview: false
+    files:
+      - name: content
+        label: "Website content"
+        file: "content/site.json"
+        format: json
+        fields:
+          - { label: "Brand name", name: name, widget: string }
+          - { label: "First name (used in 'Hi, I'm …')", name: person, widget: string }
+          - { label: "Full name (under your photo)", name: fullName, widget: string }
+          - { label: "Title", name: role, widget: string }
+          - { label: "Instagram handle", name: handle, widget: string }
+          - { label: "Your photo (also used as the logo)", name: photo, widget: image }
+          - { label: "Email (for 'Let's talk')", name: email, widget: string }
+          - { label: "'Book your edit' button link", name: bookingUrl, widget: string }
+          - { label: "Feedback form link", name: feedbackForm, widget: string, required: false }
+          - { label: "Showreel YouTube link (optional — uses your first video if empty)", name: showreel, widget: string, required: false }
+
+          - label: "Social links"
+            name: socials
+            widget: object
+            fields:
+              - { label: "Instagram", name: instagram, widget: string, required: false }
+              - { label: "TikTok", name: tiktok, widget: string, required: false }
+              - { label: "YouTube", name: youtube, widget: string, required: false }
+              - { label: "LinkedIn", name: linkedin, widget: string, required: false }
+              - { label: "WhatsApp (e.g. https://wa.me/212600000000)", name: whatsapp, widget: string, required: false }
+
+          - label: "Numbers under the showreel"
+            name: stats
+            widget: list
+            summary: "{{fields.value}}{{fields.suffix}} — {{fields.label}}"
+            fields:
+              - { label: "Number (write 'auto' to count your videos)", name: value, widget: string }
+              - { label: "Decimals", name: decimals, widget: number, value_type: int, default: 0 }
+              - { label: "After the number (+, %, ★…)", name: suffix, widget: string, required: false }
+              - { label: "Label", name: label, widget: string }
+
+          - label: "Tools I work with"
+            name: tools
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Tool name", name: name, widget: string }
+              - { label: "Icon letters", name: abbr, widget: string }
+              - { label: "Icon text color", name: color, widget: string, default: "#ffffff" }
+              - { label: "Icon background color", name: bg, widget: string, default: "#1d2a40" }
+
+          - label: "Portfolio sections"
+            name: sections
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Section ID (no spaces, e.g. reels)", name: id, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Small label", name: kicker, widget: string }
+              - { label: "Description", name: description, widget: text }
+              - { label: "Card shape", name: format, widget: select, options: [{ label: "Wide (16:9)", value: wide }, { label: "Tall (9:16, for reels)", value: tall }] }
+              - { label: "YouTube playlist link", name: playlist, widget: string, required: false }
+              - label: "Videos"
+                name: videos
+                widget: list
+                summary: "{{fields.title}} {{fields.id}}"
+                fields:
+                  - { label: "YouTube link or video ID", name: id, widget: string }
+                  - { label: "Title (optional)", name: title, widget: string, required: false }
+
+          - label: "Client reviews"
+            name: testimonials
+            widget: list
+            summary: "{{fields.n}} — {{fields.q}}"
+            fields:
+              - { label: "Review", name: q, widget: text }
+              - { label: "Name", name: n, widget: string }
+              - { label: "Label under the name", name: r, widget: string, default: "Client" }
+              - { label: "Photo", name: photo, widget: image, required: false }

@@ -1,0 +1,104 @@
+{
+  "name": "Saad Editing",
+  "person": "Saad",
+  "fullName": "Saad Eddine",
+  "role": "Professional Video Editor",
+  "handle": "@saad.editing",
+  "photo": "assets/saad.jpg",
+  "email": "Hassanth1111@gmail.com",
+  "bookingUrl": "https://www.instagram.com/saad.editing/",
+  "feedbackForm": "https://forms.gle/TKKF9Qkt8LRYWtYR6",
+  "showreel": "",
+  "socials": {
+    "instagram": "https://www.instagram.com/saad.editing/",
+    "tiktok": "https://www.tiktok.com/@saade.editing",
+    "youtube": "https://www.youtube.com/@saade.editing",
+    "linkedin": "",
+    "whatsapp": ""
+  },
+  "stats": [
+    { "value": "auto", "decimals": 0, "suffix": "+", "label": "Videos in this portfolio" },
+    { "value": "5.0", "decimals": 1, "suffix": "★", "label": "Average client rating" },
+    { "value": "100", "decimals": 0, "suffix": "%", "label": "Five-star client reviews" }
+  ],
+  "tools": [
+    { "abbr": "Pr", "name": "Premiere Pro", "color": "#9999ff", "bg": "#00005b" },
+    { "abbr": "Ae", "name": "After Effects", "color": "#d291ff", "bg": "#00005b" },
+    { "abbr": "Cc", "name": "CapCut", "color": "#ffffff", "bg": "#111111" },
+    { "abbr": "Ps", "name": "Photoshop", "color": "#31a8ff", "bg": "#001e36" },
+    { "abbr": "Au", "name": "Audition", "color": "#9999ff", "bg": "#00005b" },
+    { "abbr": "Fr", "name": "Frame.io", "color": "#ffffff", "bg": "#5b53ff" }
+  ],
+  "sections": [
+    {
+      "id": "podcasts",
+      "title": "Podcasts",
+      "kicker": "Long-form",
+      "description": "Multi-cam podcast edits with clean audio, tight pacing and visuals that keep listeners watching to the end.",
+      "format": "wide",
+      "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEoVvRnSF4eClM5GsZrq0bQI",
+      "videos": [
+        { "id": "vpQEMGaM6B8", "title": "Estate Agency — UK Company" },
+        { "id": "3D1BhscH7tA", "title": "Podcast 01 — French Real Estate Company" },
+        { "id": "a-nc_HuYq4c", "title": "Funny Wedding Podcast" },
+        { "id": "BAPfDfxzPWc", "title": "Podcast 01 — UK Business Company" },
+        { "id": "igPE9wpO7T0", "title": "Podcast 02 — UK Business Company" }
+      ]
+    },
+    {
+      "id": "youtube",
+      "title": "YouTube Content",
+      "kicker": "Creator videos",
+      "description": "Retention-first YouTube edits — strong hooks, motion graphics, sound design and storytelling that holds attention.",
+      "format": "wide",
+      "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEo7cvtMJgSzRxL_K1DKVIck",
+      "videos": [
+        { "id": "L8Sbg--Np1A", "title": "History Storytelling — Content Creator" },
+        { "id": "u1B-SiM2sy8", "title": "French Educational Content — Dreaming French" },
+        { "id": "vNcENbsz3zY", "title": "YouTube Video 01 — Content Creator" },
+        { "id": "XYvmiaq0tV8", "title": "French Educational Content — Dreaming French" },
+        { "id": "pHPOalQBDcc", "title": "YouTube Video 02 — Content Creator" },
+        { "id": "Z11nsgED2c4", "title": "Product Showcase — Mobelec Company" },
+        { "id": "x1HVN-8U7R8", "title": "French Educational Content — Dreaming French" },
+        { "id": "5GNC4GehlLY", "title": "YouTube Video 03 — Content Creator" },
+        { "id": "yie5kaTQ1To", "title": "French Educational Content — Dreaming French" },
+        { "id": "9GoWCd9VYok", "title": "CCA Ceremony Presentation" }
+      ]
+    },
+    {
+      "id": "reels",
+      "title": "Reels & Shorts",
+      "kicker": "Short-form",
+      "description": "Scroll-stopping vertical edits for Reels, TikTok and Shorts — punchy captions, fast cuts, built to go viral.",
+      "format": "tall",
+      "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEqUEWACCL94aK5VnNLVBIAE",
+      "videos": [
+        { "id": "vPHcLK9yrm8", "title": "" },
+        { "id": "5NWBadJXY7c", "title": "" },
+        { "id": "BXNp_qY1iO0", "title": "" },
+        { "id": "KEKXq7gQcLk", "title": "" },
+        { "id": "LtuZDX06HrQ", "title": "" },
+        { "id": "5HKnTQg3fj8", "title": "" },
+        { "id": "RyxFs46_BHg", "title": "" },
+        { "id": "TLkdQRL_4QU", "title": "" },
+        { "id": "34b83uFN90o", "title": "" },
+        { "id": "xRWfYTBQvV4", "title": "" },
+        { "id": "-6N_4bS6yHc", "title": "" },
+        { "id": "-HhqvHPAQ4U", "title": "" },
+        { "id": "XVeaHXZq59I", "title": "" },
+        { "id": "3y_gZJBf42Y", "title": "" },
+        { "id": "pdqTb5E6jas", "title": "" }
+      ]
+    }
+  ],
+  "testimonials": [
+    { "q": "I really did like the attention to detail, professionalism, clear communication, and consistently meeting deadlines.", "n": "Mohamed H.", "r": "Client", "photo": "assets/clients/mohamed.png" },
+    { "q": "The ability to accurately follow the brief and fully integrate the requested elements into the final edit. The added illustrations and visual components were relevant and well-executed, contributing to a clear and coherent result.", "n": "Sarah", "r": "Client", "photo": "assets/clients/sarah.png" },
+    { "q": "The captions.", "n": "Izaak", "r": "Client", "photo": "assets/clients/izaak.png" },
+    { "q": "Excellent rapport qualité prix. Clean et efficace. Excellente communication. Merci !", "n": "Sébastien", "r": "Client", "photo": "assets/clients/sebastien.webp" },
+    { "q": "Ability to listen to feedback and speed.", "n": "Tariq", "r": "Client", "photo": "assets/clients/tariq.png" },
+    { "q": "The fast response and easy communication. Keep it up!", "n": "Abdellah", "r": "Client", "photo": "assets/clients/abdellah.png" },
+    { "q": "Good quality.", "n": "Lucas H.", "r": "Client", "photo": "assets/clients/lucas.png" },
+    { "q": "Good editing.", "n": "Mouhamed", "r": "Client", "photo": "assets/clients/mitnomas.png" }
+  ]
+}
