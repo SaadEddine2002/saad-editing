@@ -68,8 +68,6 @@
   .logo-mark{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
     background:linear-gradient(135deg,var(--violet),#0549a8);box-shadow:0 0 20px var(--glow),inset 0 1px 0 rgba(255,255,255,.3)}
   .logo-mark svg{width:14px;height:14px}
-  .logo-mark.has-photo{overflow:hidden;padding:0;border:1px solid rgba(255,255,255,.35);box-shadow:0 0 20px var(--glow),0 0 0 1px rgba(29,140,255,.5)}
-  .logo-mark.has-photo img{width:100%;height:100%;object-fit:cover;object-position:46% 22%;transform:scale(1.5);transform-origin:46% 28%}
   .nav-links{display:flex;gap:4px}
   .nav-links a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--muted);transition:color .2s,background .2s}
   .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
@@ -675,12 +673,7 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
     const v = s.value === 'auto' ? totalVideos : s.value;
     return `<div class="stat"><b class="grad" data-count="${v}" data-dec="${s.decimals || 0}" data-suffix="${esc(s.suffix)}">0${esc(s.suffix)}</b><span>${esc(s.label)}</span></div>`;
   }).join('');
-  if (CONFIG.photo) {
-    $('#aboutImg').src = CONFIG.photo;
-    const mark = $('.logo-mark');
-    mark.classList.add('has-photo');
-    mark.innerHTML = `<img src="${esc(CONFIG.photo)}" alt="">`;
-  } else $('#about').remove();
+  if (CONFIG.photo) $('#aboutImg').src = CONFIG.photo; else $('#about').remove();
 
   /* ---- tools marquee ---- */
   const toolHtml = (CONFIG.tools || []).map(t =>

@@ -24,7 +24,7 @@ collections:
           - { label: "Full name (under your photo)", name: fullName, widget: string }
           - { label: "Title", name: role, widget: string }
           - { label: "Instagram handle", name: handle, widget: string }
-          - { label: "Your photo (also used as the logo)", name: photo, widget: image }
+          - { label: "Your photo (About section)", name: photo, widget: image }
           - { label: "Email (for 'Let's talk')", name: email, widget: string }
           - { label: "'Book your edit' button link", name: bookingUrl, widget: string }
           - { label: "Feedback form link", name: feedbackForm, widget: string, required: false }
