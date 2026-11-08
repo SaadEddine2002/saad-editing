@@ -17,7 +17,7 @@
     "whatsapp": "212626265273"
   },
   "stats": [
-    { "value": "auto", "decimals": 0, "suffix": "+", "label": "Videos in this portfolio" },
+    { "value": "200", "decimals": 0, "suffix": "+", "label": "Edited videos" },
     { "value": "5.0", "decimals": 1, "suffix": "★", "label": "Average client rating" },
     { "value": "100", "decimals": 0, "suffix": "%", "label": "Five-star client reviews" }
   ],
