@@ -4,7 +4,7 @@
   "fullName": "Saad Eddine",
   "role": "Professional Video Editor",
   "handle": "@saad.editing",
-  "photo": "assets/saad.jpg",
+  "photo": "/assets/saad.jpg",
   "email": "Hassanth1111@gmail.com",
   "bookingUrl": "https://www.instagram.com/saad.editing/",
   "feedbackForm": "https://forms.gle/TKKF9Qkt8LRYWtYR6",
@@ -92,13 +92,13 @@
     }
   ],
   "testimonials": [
-    { "q": "I really did like the attention to detail, professionalism, clear communication, and consistently meeting deadlines.", "n": "Mohamed H.", "r": "Client", "photo": "assets/clients/mohamed.png" },
-    { "q": "The ability to accurately follow the brief and fully integrate the requested elements into the final edit. The added illustrations and visual components were relevant and well-executed, contributing to a clear and coherent result.", "n": "Sarah", "r": "Client", "photo": "assets/clients/sarah.png" },
-    { "q": "The captions.", "n": "Izaak", "r": "Client", "photo": "assets/clients/izaak.png" },
-    { "q": "Excellent rapport qualité prix. Clean et efficace. Excellente communication. Merci !", "n": "Sébastien", "r": "Client", "photo": "assets/clients/sebastien.webp" },
-    { "q": "Ability to listen to feedback and speed.", "n": "Tariq", "r": "Client", "photo": "assets/clients/tariq.png" },
-    { "q": "The fast response and easy communication. Keep it up!", "n": "Abdellah", "r": "Client", "photo": "assets/clients/abdellah.png" },
-    { "q": "Good quality.", "n": "Lucas H.", "r": "Client", "photo": "assets/clients/lucas.png" },
-    { "q": "Good editing.", "n": "Mouhamed", "r": "Client", "photo": "assets/clients/mitnomas.png" }
+    { "q": "I really did like the attention to detail, professionalism, clear communication, and consistently meeting deadlines.", "n": "Mohamed H.", "r": "Client", "photo": "/assets/clients/mohamed.png" },
+    { "q": "The ability to accurately follow the brief and fully integrate the requested elements into the final edit. The added illustrations and visual components were relevant and well-executed, contributing to a clear and coherent result.", "n": "Sarah", "r": "Client", "photo": "/assets/clients/sarah.png" },
+    { "q": "The captions.", "n": "Izaak", "r": "Client", "photo": "/assets/clients/izaak.png" },
+    { "q": "Excellent rapport qualité prix. Clean et efficace. Excellente communication. Merci !", "n": "Sébastien", "r": "Client", "photo": "/assets/clients/sebastien.webp" },
+    { "q": "Ability to listen to feedback and speed.", "n": "Tariq", "r": "Client", "photo": "/assets/clients/tariq.png" },
+    { "q": "The fast response and easy communication. Keep it up!", "n": "Abdellah", "r": "Client", "photo": "/assets/clients/abdellah.png" },
+    { "q": "Good quality.", "n": "Lucas H.", "r": "Client", "photo": "/assets/clients/lucas.png" },
+    { "q": "Good editing.", "n": "Mouhamed", "r": "Client", "photo": "/assets/clients/mitnomas.png" }
   ]
 }
