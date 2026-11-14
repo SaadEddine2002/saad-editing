@@ -703,6 +703,7 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
 
   /* ---- work categories ---- */
   const LIMITS = { wide: 6, tall: 8 };
+  const liveSections = [];
   const cats = $('#categories');
   CONFIG.sections.forEach((sec, si) => {
     const ids = (sec.videos || []).map(v => ({ id: videoId(v), title: typeof v === 'object' ? v.title : '' })).filter(v => v.id);
@@ -724,14 +725,17 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
       <div class="body"></div>`;
     const body = $('.body', el);
 
-    if (ids.length) {
+    // Draws the video cards; called again when the live YouTube list arrives
+    const renderGrid = (list) => {
+      body.innerHTML = '';
       const grid = document.createElement('div');
       grid.className = `grid ${sec.format}`;
       body.appendChild(grid);
       const limit = LIMITS[sec.format] || 6;
       let shown = 0;
+      let moreRow = null;
       const addMore = () => {
-        ids.slice(shown, shown + limit).forEach((v, i) => {
+        list.slice(shown, shown + limit).forEach((v, i) => {
           const b = document.createElement('button');
           b.className = 'card reveal in';
           b.setAttribute('aria-label', `Play ${v.title || sec.title + ' video'}`);
@@ -745,16 +749,20 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
           grid.appendChild(b);
         });
         shown += limit;
-        if (shown >= ids.length && moreRow) moreRow.remove();
+        if (shown >= list.length && moreRow) moreRow.remove();
       };
-      let moreRow = null;
-      if (ids.length > limit) {
+      if (list.length > limit) {
         moreRow = document.createElement('div'); moreRow.className = 'more-row';
         moreRow.innerHTML = `<button class="btn btn-ghost">Show more ${esc(sec.title.toLowerCase())}</button>`;
         $('button', moreRow).onclick = addMore;
         body.appendChild(moreRow);
       }
       addMore();
+    };
+    liveSections.push({ sec, ids, renderGrid, hadPlaylist: !!pl });
+
+    if (ids.length) {
+      renderGrid(ids);
     } else if (pl) {
       body.innerHTML = `<div class="playlist-embed ${sec.format} reveal"><iframe loading="lazy" title="${esc(sec.title)} playlist"
         src="https://www.youtube-nocookie.com/embed/videoseries?list=${pl}&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
@@ -785,6 +793,25 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
     }});
   }, { rootMargin: '-40% 0px -55% 0px' });
   CONFIG.sections.forEach(s => tabObs.observe(document.getElementById(s.id)));
+
+  /* ---- live playlists: new YouTube uploads appear automatically ---- */
+  // Shows the saved videos first, then swaps in the current playlist from /api/playlists.
+  // Titles you set in the admin win; new videos use their YouTube title (reels stay title-less).
+  fetch('/api/playlists').then(r => r.ok ? r.json() : {}).then(live => {
+    liveSections.forEach(({ sec, ids, renderGrid, hadPlaylist }) => {
+      const fresh = live && live[sec.id];
+      if (!hadPlaylist || !Array.isArray(fresh) || !fresh.length) return;
+      const saved = new Map(ids.map(v => [v.id, v.title]));
+      const list = fresh.map(v => ({
+        id: v.id,
+        title: saved.has(v.id) ? saved.get(v.id) : (sec.format === 'tall' ? '' : v.title)
+      }));
+      const same = list.length === ids.length && list.every((v, i) => v.id === ids[i].id);
+      if (!same) renderGrid(list);
+      const tab = tabs.querySelector(`[data-t="${sec.id}"]`);
+      if (tab) tab.innerHTML = `${esc(sec.title.split(' ')[0])}<em>${list.length}</em>`;
+    });
+  }).catch(() => { /* keep the saved videos */ });
 
   /* ---- testimonials ---- */
   const avColors = ['#0a6fd8','#0284c7','#0891b2','#1d6fe0','#2563eb','#0369a1'];
