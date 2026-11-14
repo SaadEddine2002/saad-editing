@@ -38,11 +38,12 @@
       "format": "wide",
       "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEoVvRnSF4eClM5GsZrq0bQI",
       "videos": [
-        { "id": "vpQEMGaM6B8", "title": "Estate Agency — UK Company" },
-        { "id": "3D1BhscH7tA", "title": "Podcast 01 — French Real Estate Company" },
-        { "id": "a-nc_HuYq4c", "title": "Funny Wedding Podcast" },
-        { "id": "BAPfDfxzPWc", "title": "Podcast 01 — UK Business Company" },
-        { "id": "igPE9wpO7T0", "title": "Podcast 02 — UK Business Company" }
+        { "id": "vpQEMGaM6B8", "title": "Estate Agency Podcast — UK Real Estate" },
+        { "id": "3D1BhscH7tA", "title": "Real Estate Podcast — French Agency, Ep. 1" },
+        { "id": "a-nc_HuYq4c", "title": "Funny Wedding Podcast — Full Episode" },
+        { "id": "BAPfDfxzPWc", "title": "Business Podcast — UK Company, Ep. 1" },
+        { "id": "igPE9wpO7T0", "title": "Business Podcast — UK Company, Ep. 2" },
+        { "id": "Q2CVTmRUDO4", "title": "James' Story — Podcast Interview" }
       ]
     },
     {
@@ -53,16 +54,18 @@
       "format": "wide",
       "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEo7cvtMJgSzRxL_K1DKVIck",
       "videos": [
-        { "id": "L8Sbg--Np1A", "title": "History Storytelling — Content Creator" },
-        { "id": "u1B-SiM2sy8", "title": "French Educational Content — Dreaming French" },
-        { "id": "vNcENbsz3zY", "title": "YouTube Video 01 — Content Creator" },
-        { "id": "XYvmiaq0tV8", "title": "French Educational Content — Dreaming French" },
-        { "id": "pHPOalQBDcc", "title": "YouTube Video 02 — Content Creator" },
-        { "id": "Z11nsgED2c4", "title": "Product Showcase — Mobelec Company" },
-        { "id": "x1HVN-8U7R8", "title": "French Educational Content — Dreaming French" },
-        { "id": "5GNC4GehlLY", "title": "YouTube Video 03 — Content Creator" },
-        { "id": "yie5kaTQ1To", "title": "French Educational Content — Dreaming French" },
-        { "id": "9GoWCd9VYok", "title": "CCA Ceremony Presentation" }
+        { "id": "soOZdpug8GI", "title": "Why People Stop Watching Your Videos" },
+        { "id": "Dty3E2mGxQ8", "title": "Devon — Services Presentation Video" },
+        { "id": "u1B-SiM2sy8", "title": "Learn French — Dreaming French, Lesson 1" },
+        { "id": "XYvmiaq0tV8", "title": "Learn French — Dreaming French, Lesson 2" },
+        { "id": "x1HVN-8U7R8", "title": "Learn French — Dreaming French, Lesson 3" },
+        { "id": "yie5kaTQ1To", "title": "Dreaming French — Long-Form Episode" },
+        { "id": "L8Sbg--Np1A", "title": "History Storytelling — Documentary-Style Edit" },
+        { "id": "9GoWCd9VYok", "title": "CCA Graduation Ceremony — Event Highlights" },
+        { "id": "pHPOalQBDcc", "title": "YouTube Tips for Creators — Ep. 2" },
+        { "id": "vNcENbsz3zY", "title": "YouTube Tips for Creators — Ep. 1" },
+        { "id": "5GNC4GehlLY", "title": "Should You Turn On YouTube Auto-Translate?" },
+        { "id": "Z11nsgED2c4", "title": "Mobelec Electric Scooters — Product Showcase" }
       ]
     },
     {
