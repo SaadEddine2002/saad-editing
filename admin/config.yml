@@ -28,7 +28,7 @@ collections:
           - { label: "Email (for 'Let's talk')", name: email, widget: string }
           - { label: "'Book your edit' button link", name: bookingUrl, widget: string }
           - { label: "Feedback form link", name: feedbackForm, widget: string, required: false }
-          - { label: "Showreel YouTube link (optional — uses your first video if empty)", name: showreel, widget: string, required: false }
+          - { label: "Introduction video — YouTube link (plays from the big screen at the top)", name: showreel, widget: string, required: false }
 
           - label: "Social links"
             name: socials

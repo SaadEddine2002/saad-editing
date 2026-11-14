@@ -859,9 +859,8 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
   modal.addEventListener('click', e => { if (e.target === modal) closeVideo(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeVideo(); });
 
-  // Showreel: use CONFIG.showreel, else the first video found
-  const firstVid = CONFIG.sections.map(s => (s.videos||[]).map(videoId).find(Boolean)).find(Boolean);
-  const reelId = videoId(CONFIG.showreel) || firstVid;
+  // Introduction video: its own setting (CONFIG.showreel) — never borrowed from the portfolio sections
+  const reelId = videoId(CONFIG.showreel);
   if (reelId) {
     const img = document.createElement('img'); img.className = 'thumb'; img.alt = '';
     ytThumb(img, reelId);
