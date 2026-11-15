@@ -36,6 +36,11 @@ function collectVideos(data) {
       }
       return;
     }
+    if (o.reelItemRenderer?.videoId) {
+      const r = o.reelItemRenderer;
+      out.push({ id: r.videoId, title: r.headline?.simpleText || '' });
+      return;
+    }
     if (o.shortsLockupViewModel) {
       const s = o.shortsLockupViewModel;
       const m = JSON.stringify(s).match(/"videoId":\s*"([\w-]{11})"/);
@@ -49,7 +54,7 @@ function collectVideos(data) {
   return out.filter((v) => /^[\w-]{11}$/.test(v.id) && !seen.has(v.id) && seen.add(v.id));
 }
 
-async function readPlaylist(id) {
+async function readPlaylistOnce(id) {
   const res = await fetch(`https://www.youtube.com/playlist?list=${id}`, { headers: HEADERS });
   if (!res.ok) throw new Error(`YouTube answered ${res.status}`);
   const html = await res.text();
@@ -58,6 +63,15 @@ async function readPlaylist(id) {
   const videos = collectVideos(JSON.parse(m[1]));
   if (!videos.length) throw new Error('No videos found');
   return videos;
+}
+
+// YouTube sometimes serves a different page version; try up to 3 times
+async function readPlaylist(id) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try { return await readPlaylistOnce(id); } catch (e) { lastError = e; }
+  }
+  throw lastError;
 }
 
 export default async (req) => {
@@ -74,11 +88,15 @@ export default async (req) => {
     // Leave result empty — the website then keeps showing the videos saved in site.json
   }
 
+  // If any playlist failed, only remember this answer for a minute so it's retried soon
+  const complete = Object.keys(result).length > 0 && Object.values(result).every(Boolean);
   return new Response(JSON.stringify(result), {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'public, max-age=300',
-      'Netlify-CDN-Cache-Control': 'public, durable, s-maxage=900, stale-while-revalidate=86400',
+      'Cache-Control': complete ? 'public, max-age=300' : 'no-cache',
+      'Netlify-CDN-Cache-Control': complete
+        ? 'public, durable, s-maxage=900, stale-while-revalidate=86400'
+        : 'public, s-maxage=60',
     },
   });
 };

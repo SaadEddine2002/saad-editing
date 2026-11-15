@@ -796,13 +796,17 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
 
   /* ---- live playlists: new YouTube uploads appear automatically ---- */
   // Shows the saved videos first, then swaps in the current playlist from /api/playlists.
-  // Titles you set in the admin win; otherwise the video's YouTube title is shown (reels included).
+  // Podcasts/YouTube: titles saved in the admin win. Reels: the YouTube title wins.
   fetch('/api/playlists').then(r => r.ok ? r.json() : {}).then(live => {
     liveSections.forEach(({ sec, ids, renderGrid, hadPlaylist }) => {
       const fresh = live && live[sec.id];
       if (!hadPlaylist || !Array.isArray(fresh) || !fresh.length) return;
       const saved = new Map(ids.map(v => [v.id, v.title]));
-      const list = fresh.map(v => ({ id: v.id, title: saved.get(v.id) || v.title || '' }));
+      // Reels: the YouTube title wins (saved titles are only a backup). Others: saved title wins.
+      const list = fresh.map(v => ({
+        id: v.id,
+        title: sec.format === 'tall' ? (v.title || saved.get(v.id) || '') : (saved.get(v.id) || v.title || '')
+      }));
       const same = list.length === ids.length && list.every((v, i) => v.id === ids[i].id && v.title === ids[i].title);
       if (!same) renderGrid(list);
       const tab = tabs.querySelector(`[data-t="${sec.id}"]`);
