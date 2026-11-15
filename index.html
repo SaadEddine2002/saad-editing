@@ -654,11 +654,17 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
     return m ? m[1] : (/^[\w-]{12,}$/.test(input) ? input : "");
   }
 
-  // YouTube serves a 120x90 grey image when no HD thumbnail exists — fall back to the standard one.
+  // Loads a YouTube thumbnail. YouTube returns a 120x90 grey image when a size doesn't exist, so try
+  // HD -> 640px -> 480px (the 640px copy usually picks up a changed thumbnail fastest).
   function ytThumb(img, id){
-    const fallback = () => { if (!img.dataset.fb) { img.dataset.fb = 1; img.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`; } };
-    img.addEventListener('error', fallback);
-    img.addEventListener('load', () => { if (img.naturalWidth <= 120) fallback(); });
+    const sizes = ['maxresdefault', 'sddefault', 'hqdefault'];
+    const next = () => {
+      const step = +(img.dataset.fb || 0);
+      if (step < sizes.length) { img.dataset.fb = step + 1; img.src = `https://i.ytimg.com/vi/${id}/${sizes[step]}.jpg`; }
+    };
+    img.addEventListener('error', next);
+    img.addEventListener('load', () => { if (img.naturalWidth <= 120) next(); });
+    next();
   }
 
   /* ---- bind text ---- */
@@ -740,7 +746,7 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
           b.className = 'card reveal in';
           b.setAttribute('aria-label', `Play ${v.title || sec.title + ' video'}`);
           b.innerHTML = `<div class="media">
-              <img loading="lazy" alt="" data-yt="${v.id}" src="https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg">
+              <img loading="lazy" alt="" data-yt="${v.id}">
             </div>
             <span class="p">${PLAY}</span>
             ${v.title ? `<div class="meta"><b>${esc(v.title)}</b></div>` : ''}`;
@@ -891,8 +897,8 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
   const reelId = videoId(CONFIG.showreel);
   if (reelId) {
     const img = document.createElement('img'); img.className = 'thumb'; img.alt = '';
-    ytThumb(img, reelId);
-    img.src = `https://i.ytimg.com/vi/${reelId}/maxresdefault.jpg`;
+    // A cover uploaded in the admin shows instantly; otherwise use the YouTube thumbnail
+    if (CONFIG.introCover) img.src = CONFIG.introCover; else ytThumb(img, reelId);
     $('#reelView').prepend(img);
   }
   const reelGo = () => reelId ? openVideo(reelId, 'wide') : document.getElementById('work').scrollIntoView();
