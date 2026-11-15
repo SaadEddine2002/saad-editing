@@ -655,9 +655,10 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
   }
 
   // Loads a YouTube thumbnail. YouTube returns a 120x90 grey image when a size doesn't exist, so try
-  // HD -> 640px -> 480px (the 640px copy usually picks up a changed thumbnail fastest).
-  function ytThumb(img, id){
-    const sizes = ['maxresdefault', 'sddefault', 'hqdefault'];
+  // the next size. Video cards start with the 640px copy: browsers keep it only 5 minutes (HD: 2 hours),
+  // so a thumbnail you change on YouTube shows up quickly. The big intro screen starts with HD.
+  function ytThumb(img, id, hdFirst){
+    const sizes = hdFirst ? ['maxresdefault', 'sddefault', 'hqdefault'] : ['sddefault', 'hqdefault', 'maxresdefault'];
     const next = () => {
       const step = +(img.dataset.fb || 0);
       if (step < sizes.length) { img.dataset.fb = step + 1; img.src = `https://i.ytimg.com/vi/${id}/${sizes[step]}.jpg`; }
@@ -898,7 +899,7 @@ fetch('content/site.json', { cache: 'no-cache' }).then(r => r.json()).then(CONFI
   if (reelId) {
     const img = document.createElement('img'); img.className = 'thumb'; img.alt = '';
     // A cover uploaded in the admin shows instantly; otherwise use the YouTube thumbnail
-    if (CONFIG.introCover) img.src = CONFIG.introCover; else ytThumb(img, reelId);
+    if (CONFIG.introCover) img.src = CONFIG.introCover; else ytThumb(img, reelId, true);
     $('#reelView').prepend(img);
   }
   const reelGo = () => reelId ? openVideo(reelId, 'wide') : document.getElementById('work').scrollIntoView();
