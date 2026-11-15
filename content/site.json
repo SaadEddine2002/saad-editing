@@ -1,15 +1,4 @@
 {
-  "name": "Saad Editing",
-  "person": "Saad",
-  "fullName": "Saad Eddine",
-  "role": "Professional Video Editor",
-  "handle": "@saad.editing",
-  "photo": "/assets/saad.jpg",
-  "email": "Hassanth1111@gmail.com",
-  "bookingUrl": "https://www.instagram.com/saad.editing/",
-  "feedbackForm": "https://forms.gle/TKKF9Qkt8LRYWtYR6",
-  "showreel": "https://www.youtube.com/watch?v=soOZdpug8GI",
-  "introCover": "",
   "socials": {
     "instagram": "https://www.instagram.com/saad.editing/",
     "tiktok": "https://www.tiktok.com/@saade.editing",
@@ -17,19 +6,10 @@
     "linkedin": "",
     "whatsapp": "212626265273"
   },
-  "stats": [
-    { "value": "200", "decimals": 0, "suffix": "+", "label": "Edited videos" },
-    { "value": "5.0", "decimals": 1, "suffix": "★", "label": "Average client rating" },
-    { "value": "100", "decimals": 0, "suffix": "%", "label": "Five-star client reviews" }
-  ],
-  "tools": [
-    { "abbr": "Pr", "name": "Premiere Pro", "color": "#9999ff", "bg": "#00005b" },
-    { "abbr": "Ae", "name": "After Effects", "color": "#d291ff", "bg": "#00005b" },
-    { "abbr": "Cc", "name": "CapCut", "color": "#ffffff", "bg": "#111111" },
-    { "abbr": "Ps", "name": "Photoshop", "color": "#31a8ff", "bg": "#001e36" },
-    { "abbr": "Au", "name": "Audition", "color": "#9999ff", "bg": "#00005b" },
-    { "abbr": "Fr", "name": "Frame.io", "color": "#ffffff", "bg": "#5b53ff" }
-  ],
+  "handle": "@saad.editing",
+  "feedbackForm": "https://forms.gle/TKKF9Qkt8LRYWtYR6",
+  "introCover": "/assets/uploads/capture-d-écran-2026-11-14-231810.png",
+  "name": "Saad Editing",
   "sections": [
     {
       "id": "podcasts",
@@ -39,12 +19,30 @@
       "format": "wide",
       "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEoVvRnSF4eClM5GsZrq0bQI",
       "videos": [
-        { "id": "vpQEMGaM6B8", "title": "Estate Agency Podcast — UK Real Estate" },
-        { "id": "3D1BhscH7tA", "title": "Real Estate Podcast — French Agency, Ep. 1" },
-        { "id": "a-nc_HuYq4c", "title": "Funny Wedding Podcast — Full Episode" },
-        { "id": "BAPfDfxzPWc", "title": "Business Podcast — UK Company, Ep. 1" },
-        { "id": "igPE9wpO7T0", "title": "Business Podcast — UK Company, Ep. 2" },
-        { "id": "Q2CVTmRUDO4", "title": "James' Story — Podcast Interview" }
+        {
+          "id": "vpQEMGaM6B8",
+          "title": "Estate Agency Podcast — UK Real Estate"
+        },
+        {
+          "id": "3D1BhscH7tA",
+          "title": "Real Estate Podcast — French Agency, Ep. 1"
+        },
+        {
+          "id": "a-nc_HuYq4c",
+          "title": "Funny Wedding Podcast — Full Episode"
+        },
+        {
+          "id": "BAPfDfxzPWc",
+          "title": "Business Podcast — UK Company, Ep. 1"
+        },
+        {
+          "id": "igPE9wpO7T0",
+          "title": "Business Podcast — UK Company, Ep. 2"
+        },
+        {
+          "id": "Q2CVTmRUDO4",
+          "title": "James' Story — Podcast Interview"
+        }
       ]
     },
     {
@@ -55,18 +53,54 @@
       "format": "wide",
       "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEo7cvtMJgSzRxL_K1DKVIck",
       "videos": [
-        { "id": "soOZdpug8GI", "title": "Why People Stop Watching Your Videos" },
-        { "id": "Dty3E2mGxQ8", "title": "Devon — Services Presentation Video" },
-        { "id": "u1B-SiM2sy8", "title": "Learn French — Dreaming French, Lesson 1" },
-        { "id": "XYvmiaq0tV8", "title": "Learn French — Dreaming French, Lesson 2" },
-        { "id": "x1HVN-8U7R8", "title": "Learn French — Dreaming French, Lesson 3" },
-        { "id": "yie5kaTQ1To", "title": "Dreaming French — Long-Form Episode" },
-        { "id": "L8Sbg--Np1A", "title": "History Storytelling — Documentary-Style Edit" },
-        { "id": "9GoWCd9VYok", "title": "CCA Graduation Ceremony — Event Highlights" },
-        { "id": "pHPOalQBDcc", "title": "YouTube Tips for Creators — Ep. 2" },
-        { "id": "vNcENbsz3zY", "title": "YouTube Tips for Creators — Ep. 1" },
-        { "id": "5GNC4GehlLY", "title": "Should You Turn On YouTube Auto-Translate?" },
-        { "id": "Z11nsgED2c4", "title": "Mobelec Electric Scooters — Product Showcase" }
+        {
+          "id": "soOZdpug8GI",
+          "title": "Why People Stop Watching Your Videos"
+        },
+        {
+          "id": "Dty3E2mGxQ8",
+          "title": "Devon — Services Presentation Video"
+        },
+        {
+          "id": "u1B-SiM2sy8",
+          "title": "Learn French — Dreaming French, Lesson 1"
+        },
+        {
+          "id": "XYvmiaq0tV8",
+          "title": "Learn French — Dreaming French, Lesson 2"
+        },
+        {
+          "id": "x1HVN-8U7R8",
+          "title": "Learn French — Dreaming French, Lesson 3"
+        },
+        {
+          "id": "yie5kaTQ1To",
+          "title": "Dreaming French — Long-Form Episode"
+        },
+        {
+          "id": "L8Sbg--Np1A",
+          "title": "History Storytelling — Documentary-Style Edit"
+        },
+        {
+          "id": "9GoWCd9VYok",
+          "title": "CCA Graduation Ceremony — Event Highlights"
+        },
+        {
+          "id": "pHPOalQBDcc",
+          "title": "YouTube Tips for Creators — Ep. 2"
+        },
+        {
+          "id": "vNcENbsz3zY",
+          "title": "YouTube Tips for Creators — Ep. 1"
+        },
+        {
+          "id": "5GNC4GehlLY",
+          "title": "Should You Turn On YouTube Auto-Translate?"
+        },
+        {
+          "id": "Z11nsgED2c4",
+          "title": "Mobelec Electric Scooters — Product Showcase"
+        }
       ]
     },
     {
@@ -77,32 +111,182 @@
       "format": "tall",
       "playlist": "https://www.youtube.com/playlist?list=PLnqtzmNmaAEqUEWACCL94aK5VnNLVBIAE",
       "videos": [
-        { "id": "vPHcLK9yrm8", "title": "Funny Wedding Moments 😂" },
-        { "id": "5NWBadJXY7c", "title": "Arab Dads React — Funny Reaction" },
-        { "id": "BXNp_qY1iO0", "title": "A2S DEV — Promotional Ad" },
-        { "id": "KEKXq7gQcLk", "title": "Atlas Automation — Business Reel" },
-        { "id": "LtuZDX06HrQ", "title": "Marketing Agency — Promo Reel" },
-        { "id": "5HKnTQg3fj8", "title": "First Short: Let's Make It Viral" },
-        { "id": "RyxFs46_BHg", "title": "Talking-Head Reel — Clean Captions" },
-        { "id": "TLkdQRL_4QU", "title": "Talking-Head Reel — Business Tips, Part 1" },
-        { "id": "34b83uFN90o", "title": "Talking-Head Reel — Business Tips, Part 2" },
-        { "id": "xRWfYTBQvV4", "title": "UAE21 — Company Presentation Reel" },
-        { "id": "-6N_4bS6yHc", "title": "Event Highlights — Best Moments Reel" },
-        { "id": "-HhqvHPAQ4U", "title": "App Promotion — Short Ad" },
-        { "id": "XVeaHXZq59I", "title": "Care Secrets — Brand Presentation Reel" },
-        { "id": "3y_gZJBf42Y", "title": "Talking-Head Reel — Mental Health & Anxiety" },
-        { "id": "pdqTb5E6jas", "title": "Muslim Business Event — Highlights Reel" }
+        {
+          "id": "vPHcLK9yrm8",
+          "title": "Funny Wedding Moments 😂"
+        },
+        {
+          "id": "5NWBadJXY7c",
+          "title": "Arab Dads React — Funny Reaction"
+        },
+        {
+          "id": "BXNp_qY1iO0",
+          "title": "A2S DEV — Promotional Ad"
+        },
+        {
+          "id": "KEKXq7gQcLk",
+          "title": "Atlas Automation — Business Reel"
+        },
+        {
+          "id": "LtuZDX06HrQ",
+          "title": "Marketing Agency — Promo Reel"
+        },
+        {
+          "id": "5HKnTQg3fj8",
+          "title": "First Short: Let's Make It Viral"
+        },
+        {
+          "id": "RyxFs46_BHg",
+          "title": "Talking-Head Reel — Clean Captions"
+        },
+        {
+          "id": "TLkdQRL_4QU",
+          "title": "Talking-Head Reel — Business Tips, Part 1"
+        },
+        {
+          "id": "34b83uFN90o",
+          "title": "Talking-Head Reel — Business Tips, Part 2"
+        },
+        {
+          "id": "xRWfYTBQvV4",
+          "title": "UAE21 — Company Presentation Reel"
+        },
+        {
+          "id": "-6N_4bS6yHc",
+          "title": "Event Highlights — Best Moments Reel"
+        },
+        {
+          "id": "-HhqvHPAQ4U",
+          "title": "App Promotion — Short Ad"
+        },
+        {
+          "id": "XVeaHXZq59I",
+          "title": "Care Secrets — Brand Presentation Reel"
+        },
+        {
+          "id": "3y_gZJBf42Y",
+          "title": "Talking-Head Reel — Mental Health & Anxiety"
+        },
+        {
+          "id": "pdqTb5E6jas",
+          "title": "Muslim Business Event — Highlights Reel"
+        }
       ]
     }
   ],
+  "photo": "/assets/saad.jpg",
   "testimonials": [
-    { "q": "I really did like the attention to detail, professionalism, clear communication, and consistently meeting deadlines.", "n": "Mohamed H.", "r": "Client", "photo": "/assets/clients/mohamed.png" },
-    { "q": "The ability to accurately follow the brief and fully integrate the requested elements into the final edit. The added illustrations and visual components were relevant and well-executed, contributing to a clear and coherent result.", "n": "Sarah", "r": "Client", "photo": "/assets/clients/sarah.png" },
-    { "q": "The captions.", "n": "Izaak", "r": "Client", "photo": "/assets/clients/izaak.png" },
-    { "q": "Excellent rapport qualité prix. Clean et efficace. Excellente communication. Merci !", "n": "Sébastien", "r": "Client", "photo": "/assets/clients/sebastien.webp" },
-    { "q": "Ability to listen to feedback and speed.", "n": "Tariq", "r": "Client", "photo": "/assets/clients/tariq.png" },
-    { "q": "The fast response and easy communication. Keep it up!", "n": "Abdellah", "r": "Client", "photo": "/assets/clients/abdellah.png" },
-    { "q": "Good quality.", "n": "Lucas H.", "r": "Client", "photo": "/assets/clients/lucas.png" },
-    { "q": "Good editing.", "n": "Mouhamed", "r": "Client", "photo": "/assets/clients/mitnomas.png" }
+    {
+      "q": "I really did like the attention to detail, professionalism, clear communication, and consistently meeting deadlines.",
+      "n": "Mohamed H.",
+      "r": "Client",
+      "photo": "/assets/clients/mohamed.png"
+    },
+    {
+      "q": "The ability to accurately follow the brief and fully integrate the requested elements into the final edit. The added illustrations and visual components were relevant and well-executed, contributing to a clear and coherent result.",
+      "n": "Sarah",
+      "r": "Client",
+      "photo": "/assets/clients/sarah.png"
+    },
+    {
+      "q": "The captions.",
+      "n": "Izaak",
+      "r": "Client",
+      "photo": "/assets/clients/izaak.png"
+    },
+    {
+      "q": "Excellent rapport qualité prix. Clean et efficace. Excellente communication. Merci !",
+      "n": "Sébastien",
+      "r": "Client",
+      "photo": "/assets/clients/sebastien.webp"
+    },
+    {
+      "q": "Ability to listen to feedback and speed.",
+      "n": "Tariq",
+      "r": "Client",
+      "photo": "/assets/clients/tariq.png"
+    },
+    {
+      "q": "The fast response and easy communication. Keep it up!",
+      "n": "Abdellah",
+      "r": "Client",
+      "photo": "/assets/clients/abdellah.png"
+    },
+    {
+      "q": "Good quality.",
+      "n": "Lucas H.",
+      "r": "Client",
+      "photo": "/assets/clients/lucas.png"
+    },
+    {
+      "q": "Good editing.",
+      "n": "Mouhamed",
+      "r": "Client",
+      "photo": "/assets/clients/mitnomas.png"
+    }
+  ],
+  "person": "Saad",
+  "role": "Professional Video Editor",
+  "bookingUrl": "https://www.instagram.com/saad.editing/",
+  "showreel": "https://www.youtube.com/watch?v=soOZdpug8GI",
+  "fullName": "Saad Eddine",
+  "tools": [
+    {
+      "abbr": "Pr",
+      "name": "Premiere Pro",
+      "color": "#9999ff",
+      "bg": "#00005b"
+    },
+    {
+      "abbr": "Ae",
+      "name": "After Effects",
+      "color": "#d291ff",
+      "bg": "#00005b"
+    },
+    {
+      "abbr": "Cc",
+      "name": "CapCut",
+      "color": "#ffffff",
+      "bg": "#111111"
+    },
+    {
+      "abbr": "Ps",
+      "name": "Photoshop",
+      "color": "#31a8ff",
+      "bg": "#001e36"
+    },
+    {
+      "abbr": "Au",
+      "name": "Audition",
+      "color": "#9999ff",
+      "bg": "#00005b"
+    },
+    {
+      "abbr": "Fr",
+      "name": "Frame.io",
+      "color": "#ffffff",
+      "bg": "#5b53ff"
+    }
+  ],
+  "email": "Hassanth1111@gmail.com",
+  "stats": [
+    {
+      "value": "200",
+      "decimals": 0,
+      "suffix": "+",
+      "label": "Edited videos"
+    },
+    {
+      "value": "5.0",
+      "decimals": 1,
+      "suffix": "★",
+      "label": "Average client rating"
+    },
+    {
+      "value": "100",
+      "decimals": 0,
+      "suffix": "%",
+      "label": "Five-star client reviews"
+    }
   ]
 }
