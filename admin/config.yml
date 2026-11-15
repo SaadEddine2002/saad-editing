@@ -29,7 +29,6 @@ collections:
           - { label: "'Book your edit' button link", name: bookingUrl, widget: string }
           - { label: "Feedback form link", name: feedbackForm, widget: string, required: false }
           - { label: "Introduction video — YouTube link (plays from the big screen at the top)", name: showreel, widget: string, required: false }
-          - { label: "Introduction video cover image (optional — shows instantly; leave empty to use the YouTube thumbnail)", name: introCover, widget: image, required: false }
 
           - label: "Social links"
             name: socials
